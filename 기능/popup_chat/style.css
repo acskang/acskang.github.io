@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #f6eedf;
+  --secodary-color: #eb2c42;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+}
+
+body {
+  background-color: rgb(213, 222, 233);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling Wrapper */
+.wrapper {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+}
+
+/* Styling Container */
+.container {
+  position: relative;
+  height: 510px;
+}
+
+/* styling message button */
+.msg-btn {
+  background-color: var(--secodary-color);
+  color: white;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 35px;
+  padding: 10px;
+  cursor: pointer;
+  justify-self: flex-end;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin-top: 0px;
+  transition-delay: 0;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect */
+.msg-btn:hover {
+  transform: scale(1.1);
+}
+
+/* styling chat box */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secodary-color);
+  padding: 20px 20px 25px 20px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  height: auto;
+  top: 60px;
+  overflow: hidden;
+  clip-path: circle(0% at 90% 95%);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+/* styling form */
+form {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 290px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 27px;
+}
+
+/* styling image */
+.avatar {
+  background-image: url("../image/cycle.jpg");
+  height: 120px;
+  width: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  padding: 10px;
+  border: 4px solid white;
+  margin-top: 20px;
+}
+
+/* styling username */
+.username {
+  margin: 10px 0px;
+  font-size: 20px;
+  color: #ececec;
+  font-weight: lighter;
+}
+
+/* styling three dot */
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: #ececec;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}
+
+/* styling the textarea */
+textarea {
+  height: 120px;
+  margin-top: 20px;
+  padding: 10px;
+  outline: none;
+  background-color: #ececec;
+}
+
+/* styling the send button */
+.send-btn {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: rgb(41, 30, 39);
+  border: none;
+  outline: none;
+  font-weight: 700;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* Hover Effect */
+.send-btn:hover {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2);
+}

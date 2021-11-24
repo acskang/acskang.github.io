@@ -1,0 +1,16 @@
+{% extends 'zero/zero_base.html' %}
+{% load static %}
+
+{% block conversation %}
+<div class="yaya-speak">
+  <span class="type" style="--n:18"></span>
+</div>
+<div class="img-wrapper">
+  <img class="yaya-img" src="{% static 'img/yaya/궁금함.svg' %}" />
+</div>
+<form class="human" id="form" method="post" action="." data-url='{{ request.build_absolute_uri|safe }}'>
+  {% csrf_token %}
+  <input class="input-text" type="text" name="text_input" required id="id_text_input" autocomplete="off" />
+  <button class="submit-btn" type="submit"><i class="fab fa-android"></i></button>
+</form>
+{% endblock conversation %}

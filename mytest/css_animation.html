@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 300px;
+      line-height: 50px;
+    }
+
+    .load {
+      height: 50px;
+      width: 50px;
+      background-color: deeppink;
+      margin: 2px;
+      border-radius: 50%;
+      font-weight: bolder;
+      color: white;
+      animation: animate 3s alternate infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotateY(0deg);
+      }
+
+      50% {
+        transform: rotateY(360deg);
+      }
+
+      100% {
+        transform: rotateY(0deg);
+      }
+    }
+
+    /* @keyframes animate_sale {
+      0% {
+        transform: scale(0, 0);
+      }
+
+      50% {
+        transform: scale(1, 1);
+      }
+
+      100% {
+        transform: scale(0, 0);
+      }
+    } */
+
+    /* @keyframes animate_skew {
+      0% {
+        transform: skewY(0deg);
+      }
+
+      50% {
+        transform: skewY(60deg);
+      }
+
+      100% {
+        transform: skewY(0deg);
+      }
+    } */
+
+    /* @keyframes animate_translate {
+      0% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(-30px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
+    } */
+
+    .load:nth-child(1) {
+      animation-delay: .2s;
+    }
+
+    .load:nth-child(2) {
+      animation-delay: .4s;
+    }
+
+    .load:nth-child(3) {
+      animation-delay: .6s;
+    }
+
+    .load:nth-child(4) {
+      animation-delay: .8s;
+    }
+
+    .load:nth-child(5) {
+      animation-delay: 1.0s;
+    }
+
+    .load:nth-child(6) {
+      animation-delay: 1.2s;
+    }
+
+    .load:nth-child(7) {
+      animation-delay: 1.4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="load">L</div>
+    <div class="load">O</div>
+    <div class="load">A</div>
+    <div class="load">D</div>
+    <div class="load">I</div>
+    <div class="load">N</div>
+    <div class="load">G</div>
+  </div>
+</body>
+
+</html>

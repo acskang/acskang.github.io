@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: conter;
+    }
+
+    .move {
+      width: 100px;
+      height: 100px;
+      animation: yaya 5s linear 3s infinite alternate both;
+    }
+
+    @keyframes yaya {
+      0% {
+        background: url('../static/image/thesystem.png') center center/100%;
+      }
+
+      20% {
+        background: url('../static/image/궁금함.svg') center center/100%;
+      }
+
+      40% {
+        background: url('../static/image/기본형.svg') center center/100%;
+      }
+
+      60% {
+        background: url('../static/image/깜작1.svg') center center/100%;
+      }
+
+      80% {
+        background: url('../static/image/깜작2.svg') center center/100%;
+      }
+
+      100% {
+        background: url('../static/image/깜찍이.svg') center center/100%;
+      }
+
+    }
+
+    .move:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Ya Ya</h2>
+  <div class="container">
+    <div class="move"></div>
+
+  </div>
+</body>
+
+</html>

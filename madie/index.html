@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahading</title>
+  <!-- include jquery, js-cookie -->
+  <link rel="icon" href="https://www.thesysm.com/src/img/favicon.ico">
+  <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="body-wrapper">
+    <!-- header starts -->
+    <section class="header">
+      <div class="peachbug"></div>
+      <!-- {% include "common/복숭아벌레.html" %} -->
+      <a href="{% url 'home' %}" class="logo" style="text-transform: none; font-size: small;"> - <span
+          style="font-size:large;">아름다운
+          한글코딩</span> .v0.19 - </a>
+      <div class="icons">
+        <div class="fas fa-bars" id='menu-btn'></div>
+        <a href="https://www.thesysm.com/src/img/solution-archi.jpg"><i class="fas fa-book-open"></i></a>
+        <div class="fas fa-user" id='login-btn'></div>
+        <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+      </div>
+    </section>
+    <!-- header ends -->
+
+    <!-- contents -->
+    <div class="contents-wrapper">
+      {% block conversation %}
+      {% endblock conversation %}
+    </div>
+
+    <!-- footer starts -->
+    {% include "footer.html" %}
+  </div>
+
+  <!-- process status -->
+  <div class="proc front">zero</div>
+  <div class="status front">zero</div>
+  <div class="proc dj3">zero</div>
+
+  <!-- declare common elements -->
+  <script defer>
+    // 채팅 프로세스 관리
+    const procFront = document.querySelector(".proc.front");
+    const procDJ3 = document.querySelector(".proc.DJ3");
+
+    // javascript <-> django 통신 포맷(ajax)
+    let sendData = {
+      csrfmiddlewaretoken: "{{ csrf_token }}",
+      process: "",
+      step: "",
+      reqElement: "",
+      action: "",
+      speak: "",
+      chatQuery: "",
+      userInfo: {},
+    };
+    let rernData = {
+      status: "",
+    };
+  </script>
+</body>
+
+</html>

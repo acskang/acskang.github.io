@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .breadcrums {
+      padding: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .breadcrums__item {
+      display: inline-block;
+    }
+
+    .breadcrums__item:not(:last-of-type):after {
+      content: "/";
+      margin: 0 5px;
+      color: #cccccc;
+    }
+
+    .breadcrums__link {
+      text-decoration: none;
+      color: #999999;
+    }
+
+    .breadcrums__link:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrums__link--active {
+      color: #009578;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="breadcrums">
+    <li class="breadcrums__item">
+      <a href="" class="breadcrums__link">Home</a>
+    </li>
+    <li class="breadcrums__item">
+      <a href="" class="breadcrums__link">Media</a>
+    </li>
+    <li class="breadcrums__item">
+      <a href="" class="breadcrums__link">Photos</a>
+    </li>
+    <li class="breadcrums__item">
+      <a href="" class="breadcrums__link breadcrums__link--active">Nature (2019)</a>
+    </li>
+  </ul>
+</body>
+
+</html>

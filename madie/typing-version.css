@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+
+:root {
+  --main-color: #3867d6;
+}
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* overflow-x: hidden;
+  font-size: 62.5%; */
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: 0.2s linear;
+}
+
+html,
+body {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  background-color: #222;
+  flex-basis: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .logo {
+  padding: 1rem 9%;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 1rem;
+}
+.yaya,
+.text-container,
+img-container {
+  display: block;
+  text-align: center;
+  margin-top: 10%;
+}
+.text-container {
+  margin: 0 2.5%;
+  background: #333;
+  color: #fff;
+}
+span.typing {
+  color: #0000;
+  font-size: x-large;
+  background: linear-gradient(-90deg, #fff 2px, #0000 0) 2px 0,
+    linear-gradient(#fff 0 0) 0 0;
+  background-size: calc(var(--n) * 1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation: b 5s infinite steps(1),
+    t calc(var(--n) * 0.2s) steps(var(--n)) forwards;
+}
+@keyframes t {
+  from {
+    background-size: 0 200%;
+  }
+}
+@keyframes b {
+  50% {
+    background-position: 0 -100%, 0 0;
+  }
+}
+
+.img-container {
+  margin-top: 20%;
+}
+.yaya-img {
+  width: 40%;
+  max-width: 200px;
+}
+
+.human {
+  margin-top: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  min-width: 80%;
+}
+.human .input-text {
+  width: 95%;
+}
+.human .submit-btn {
+  border: none;
+  background-color: transparent;
+  padding: 2%;
+  margin: auto;
+}
+.human .fab {
+  font-size: x-large;
+  color: white;
+}
+
+.footer {
+  background-color: #222;
+  padding: 1rem 9%;
+  /* flex-basis: 6%; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100vw;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+.footer .credit {
+  display: block;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.5rem auto;
+}
+
+.img-container .yaya-img {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

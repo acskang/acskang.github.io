@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: deeppink;
+    }
+
+    .loader {
+      stroke-width: 8px;
+      stroke: white;
+      stroke-dasharray: 25px;
+      animation: animate 5s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes animate {
+      from {
+        stroke-dashoffset: -0px;
+        transform: rotateZ(0deg);
+      }
+
+      to {
+        stroke-dashoffset: -50px;
+        transform: rotateZ(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg viewbox="0 0 100 100">
+    <circle cy="50" cx="50" r="4" fill="none" class="loader"></circle>
+  </svg>
+</body>
+
+</html>

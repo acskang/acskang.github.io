@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style madie="screen">
+    .main {
+      height: 100vh;
+      width: 100%;
+      background-color: black;
+    }
+
+    .main .text-stroke {
+      stroke-width: .4px;
+      stroke-dasharray: 20px 10px;
+      font-size: 15px;
+      text-shadow: 1px 1px 2px lightyellow;
+      animation: line 3s linear infinite;
+    }
+
+    @keyframes line {
+      0% {
+        stroke-dashoffset: 0px;
+      }
+
+      100% {
+        stroke-dashoffset: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <svg viewbox="0 0 150 150">
+      <text x="5" y="70" stroke="white" fill="none" class="text-stroke">Ahading Samkong</text>
+    </svg>
+  </div>
+</body>
+
+</html>

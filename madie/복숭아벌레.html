@@ -1,0 +1,66 @@
+<style>
+  :root {
+    --size-box: 12px;
+    --heart-color: #33cc33;
+  }
+
+  .heartWrap {
+    margin-left: 4%;
+  }
+
+  .heart {
+    display: flex;
+    height: var(--size-box);
+    width: var(--size-box);
+    background-color: var(--heart-color);
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -5px 5px 10px var(--heart-color);
+    /* animation: heart 1s linear infinite; */
+  }
+
+
+  .heart:before {
+    content: "";
+    position: absolute;
+    height: var(--size-box);
+    width: var(--size-box);
+    background-color: var(--heart-color);
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -3px -3px 10px var(--heart-color);
+    border-top: 3px solid white;
+  }
+
+
+  .heart::after {
+    content: "";
+    position: absolute;
+    height: var(--size-box);
+    width: var(--size-box);
+    background-color: var(--heart-color);
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 3px -3px 10px var(--heart-color);
+  }
+
+
+  @keyframes heart {
+    0% {
+      transform: rotate(-45deg) scale(1.07);
+    }
+
+    80% {
+      transform: rotate(-45deg) scale(1.0);
+    }
+
+    100% {
+      transform: rotate(-45deg) scale(0.8);
+    }
+  }
+</style>
+<!-- <div class="heartWrap"> -->
+<a class="heartWrap" href="https://www.thesysm.com/">
+  <div class="heart"></div>
+</a>
+<!-- </div> -->

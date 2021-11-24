@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="modal-popup.css" />
+</head>
+
+<body>
+  <a href="#" class="btn" onclick="popupToggle();">Subscribe Us</a>
+
+  <div id="popup">
+    <div iv class="content">
+      <img src="../static/image/thesystem.png" alt="" />
+      <h2>Join Our Newsletter</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aspernatur. Aperiam quis commodi, ipsam corrupti
+      </p>
+      <div class="inputBox">
+        <input type="email" placeholder="Enter eMain" />
+      </div>
+      <div class="inputBox">
+        <input type="submit" value="Sign Up" class="btn" />
+      </div>
+    </div>
+    <a href="#" class="close" onclick="popupToggle();"><i class="fas fa-times"></i></a>
+  </div>
+
+  <script>
+    function popupToggle() {
+      const popup = document.querySelector('#popup');
+      popup.classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>

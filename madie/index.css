@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+
+:root {
+  --main-color: #3867d6;
+}
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+.proc,
+.status {
+  display: none;
+}
+
+html,
+body {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  max-width: 588px;
+  min-width: 300px;
+}
+
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 588px;
+  min-width: 300px;
+}
+
+/* header starts */
+.header,
+.footer {
+  background-color: #222;
+  text-align: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  display: inline-block;
+  padding: 1rem 0;
+  font-weight: bolder;
+  color: yellow;
+  font-size: 1rem;
+  margin-left: 50px;
+}
+.header .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 13%;
+  color: gray;
+  margin-right: 3%;
+}
+.header .icons:nth-child(n):hover {
+  cursor: pointer;
+}
+.header .icons .fa-book-open {
+  color: gray;
+}
+.header .icons .fa-bars {
+  display: hidden;
+}
+/* header ends */
+
+/* footer starts */
+.footer .credit {
+  color: white;
+  font-size: 0.8rem;
+  padding: 1rem 9%;
+}
+.footer .credit span {
+  color: blueviolet;
+}
+.footer .credit i {
+  padding: 0 5px;
+}
+.footer .credit i:hover {
+  color: coral;
+}
+/* footer ends */
+
+.contents-wrapper {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* human starts */
+.human {
+  margin-left: 10%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  min-width: 80%;
+}
+.human .human-speak {
+  width: 95%;
+  background-color: #333;
+  border-bottom: 1px solid #222;
+  color: white;
+  text-align: center;
+}
+.human .submit-btn {
+  border: none;
+  background-color: transparent;
+  padding: 2%;
+  margin: auto;
+}
+.human .fab {
+  font-size: x-large;
+  color: white;
+}
+/* human ends */
+
+/* fullscreen starts */
+.contents-wrapper {
+  position: relative;
+}
+.fullscreen-icon {
+  font-size: large;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 2%;
+}
+.fa-compress {
+  display: none;
+}

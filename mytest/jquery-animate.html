@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      /* width: 250px; */
+      height: 200px;
+      border-radius: 50%;
+      position: absolute;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  <img src="../static/image/cycle.jpg" alt="" id="jump">
+  <script>
+    // $(document).ready(function () {
+    //   function animation() {
+    //     $('#jump').animate({
+    //       top: "100px",
+    //       width: "200px"
+    //     }, 1000, function () {
+    //       $('#jump').animate({
+    //         top: "300px",
+    //         width: "230px"
+    //       }, 1000, animation)
+    //     })
+    //   }
+    //   animation()
+    // })
+    function animation() {
+      $('#jump').animate({
+        top: "100px", width: "200px"
+      }, 1000, function () {
+        $('#jump').animate({
+          top: "300px", width: "230px"
+        }, 1000, animation)
+      })
+    }
+    animation()
+  </script>
+</body>
+
+</html>

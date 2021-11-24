@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      padding: 50px;
+      background-color: #eac5d8;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 128px;
+      margin: 0;
+      line-height: 1em;
+      font-weight: bold;
+      color: #d68fb5;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>I am <br />in your <br /> code!</h1>
+
+  <script>
+    let myCoolCode = document.createElement("script");
+    myCoolCode.setAttribute("src", "http://127.0.0.1:5500/easing.js");
+    document.body.appendChild(myCoolCode);
+  </script>
+</body>
+
+</html>
+
+<!-- Ref. URL -->
+<!-- https://www.kirupa.com/html5/loading_script_files_dynamically.htm -->

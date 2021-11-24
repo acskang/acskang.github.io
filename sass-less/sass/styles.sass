@@ -1,0 +1,46 @@
+$maincolor: #444444
+$titlecolor: #222222
+$linkcolor: #666666
+$backgroundcolor: silver
+$mainfontsize: 12px
+$titlefontsize: 24px
+$baseurl: "https://www.thesysm.com/src/img"
+
+@mixin titleborder
+  border-left: 5px solid red
+  padding-left: 10px
+
+@mixin round-corner($radius: 10px)
+  border-radius: $radius
+  padding: 5px
+
+body
+  color: $maincolor
+  font-size: $mainfontsize
+  background-image: url($baseurl + "/cycle.jpg")
+h1 a
+  color: $titlecolor
+  text-decoration: none
+  font-size: $titlefontsize
+a
+  color: $linkcolor
+nav h1,
+#wrap > section > h1
+  @include titleborder
+#content > h1
+  background-color: $backgroundcolor
+  @include round-corner
+aside h1
+  background-color: $backgroundcolor
+  @include round-corner(20px)
+header
+  color: black
+  nav
+    font-size: $mainfontsize
+    ul li
+      list-style: none
+      a
+        text-decoration: none
+        font-weight: bold
+        &:hover
+          color: blue

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .canvas {
+      background-color: beige;
+    }
+
+    .video {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>video</h1>
+  <video src="../../video/210731.mp4" class="video" autoplay muted loop></video>
+  <canvas class="canvas" width="600" height="400">Canvas Not available!</canvas>
+  <script>
+    const c = document.querySelector(".canvas");
+    const ctx = c.getContext('2d');
+    let canPlayState = false;
+
+    ctx.textAlign = 'center';
+    ctx.fillText('비디오 로딩 중..', 300, 200);
+
+    const videoElem = document.querySelector('.video');
+    videoElem.addEventListener('canplaythrough', render);
+
+    function render() {
+      ctx.drawImage(videoElem, 0, 0, 600, 400);
+      requestAnimationFrame(render);
+    }
+  </script>
+</body>
+
+</html>

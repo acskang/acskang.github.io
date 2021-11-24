@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: black;
+      transition: all .3s;
+    }
+
+    i {
+      color: yellow;
+      font-size: 40px;
+      transform: rotateZ(180deg);
+      position: absolute;
+      top: 0;
+      left: 20px;
+    }
+
+    .main {
+      color: white;
+      margin: 70px;
+      text-align: justify;
+    }
+
+    .dark {
+      color: black;
+    }
+
+    .content {
+      color: black;
+    }
+
+    .bg {
+      background-color: white;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <i class="fas fa-lightbulb"></i>
+  <div class="main">
+
+    <h2>this is heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, odio, voluptatibus dolor libero ex voluptas
+      ratione, earum asperiores nemo laborum deleniti facilis voluptate quaerat neque! Ea voluptas, rem unde labore quam
+      quod non? Suscipit dolores, ipsa id odit vitae totam dolorem tempore, dignissimos illo dolor exercitationem
+      nesciunt voluptatum beatae rem corrupti maiores culpa obcaecati a, quaerat corporis voluptatem quidem blanditiis?
+      Officia fuga totam officiis facilis explicabo, ea eaque illo, recusandae itaque enim placeat quasi quo
+      exercitationem in nulla eum. Nobis odio cumque aut nulla obcaecati omnis eos accusantium, optio qui facilis
+      voluptas laborum quas reprehenderit consectetur, repellat labore cum placeat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dignissimos asperiores at, sapiente itaque
+      nemo suscipit harum quisquam non error modi, cupiditate reprehenderit numquam sint molestiae veniam, saepe
+      voluptate vel alias perferendis minima accusantium ab. Quaerat ea autem unde soluta libero aliquam suscipit eum
+      obcaecati adipisci ut porro fugit eius asperiores molestias cupiditate veritatis magni, deleniti qui expedita.
+      Quasi amet veritatis perferendis, reprehenderit at saepe obcaecati dolorum doloribus sint eaque, vel odit maiores
+      neque expedita eligendi, impedit voluptatum perspiciatis aspernatur laudantium. Explicabo, nesciunt sed eius
+      praesentium error optio consequuntur ipsam quod libero animi velit, consectetur, magnam illum laborum accusamus
+      suscipit?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet officiis qui numquam quidem excepturi nisi itaque
+      dolorem omnis architecto sed voluptas aut dolore nostrum quae, quas eius atque non assumenda voluptatum ut tenetur
+      est laudantium delectus! Quam maiores qui suscipit quibusdam, corporis veniam! Ad itaque vero mollitia quos
+      aspernatur eum eveniet quod vel maiores, sint aperiam repellat quia, tenetur magnam ut illo enim debitis deserunt
+      qui voluptate non. Cumque illo veritatis atque tempora fugiat vero a unde sit cum animi, expedita modi, illum
+      corrupti quam? Ducimus, quisquam vero ex mollitia sed beatae porro odit in? Molestiae doloremque magnam quod iure?
+    </p>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('i').click(function () {
+        $(this).toggleClass('dark');
+        $('.main').toggleClass('content');
+        $('body').toggleClass('bg');
+      });
+    });
+  </script>
+</body>
+
+</html>

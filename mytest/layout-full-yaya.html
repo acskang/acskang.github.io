@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./layout-full-yaya.css" />
+  <style>
+    .conver {
+      position: relative;
+    }
+
+    .fullscreen-icon {
+      font-size: x-large;
+      color: white;
+      position: absolute;
+      bottom: 1%;
+      right: 2%;
+    }
+
+    .fa-expand {}
+
+    .fa-compress {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>header</h1>
+  </div>
+  <div class="conver">
+    <div class="con1">conversation1</div>
+    <div class="con2">
+      <img class="yaya" src="../static/image/깜찍이.svg" alt="" />
+    </div>
+    <div class="con3">conversation3</div>
+    <div class="fullscreen-icon">
+      <i class="fas fa-expand" onclick="fullscreen()"></i>
+      <i class="fas fa-compress" onclick="closeFullscreen()"></i>
+    </div>
+  </div>
+  <div class="footer">
+    <h1>footer</h1>
+  </div>
+  <script>
+    const screen = document.querySelector('.conver');
+    function fullscreen() {
+      screen.webkitRequestFullscreen();
+      document.querySelector(".fa-expand").style.display = 'none';
+      document.querySelector(".fa-compress").style.display = 'initial';
+    }
+    function closeFullscreen() {
+      document.webkitExitFullscreen();
+      document.querySelector(".fa-expand").style.display = 'initial';
+      document.querySelector(".fa-compress").style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

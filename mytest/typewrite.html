@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+    }
+
+    .display {
+      font-size: xx-large;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="display">안녕하세요</div>
+  <script>
+    const names = [
+      "Alberta",
+      "Barry",
+      "Charley",
+      "Christopher",
+      "Dianne",
+      "Ellen",
+      "Ethel",
+      "James",
+      "Jodee",
+      "Joseph",
+      "Lilia",
+      "Mark",
+      "Mary",
+      "Merri",
+      "Michael",
+      "Mildred",
+      "Randall",
+      "Roy",
+      "Thomas",
+      "Venus"
+    ];
+
+    const display = document.querySelector(".display");
+    const output = s => display.innerHTML += s;
+
+    let message = "은마 아파트 폭락";
+
+    const typeWriter = (fn, delay) => {
+      return (name, i) => {
+        setTimeout(() => {
+          output(name);
+        }, i * delay);
+      }
+    };
+    display.innerHTML = "";
+    console.log(message.length);
+    message.split("").forEach(typeWriter(output, 2000 / message.length))
+
+
+
+    // let i = 0;
+    // display.innerHTML = "";
+    // function typeWrite() {
+    //   if (i < message.length) {
+    //     display.innerHTML += message.charAt(i);
+    //     i++;
+    //     setTimeout(typeWrite, 200);
+    //   }
+    // };
+    // typeWrite();
+  </script>
+</body>
+
+</html>

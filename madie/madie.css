@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap");
+
+:root {
+  --main-color: #3867d6;
+}
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #444;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5rem;
+}
+
+body {
+  background-color: #222;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+}
+
+.header .logo {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 2.5rem;
+}
+.header .logo span {
+  color: var(--main-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container .output {
+  flex: 1 1 0;
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .image {
+  flex: 2 1 40%;
+  background-color: black;
+  position: relative;
+}
+.container .input {
+  flex: 1 1 0;
+}
+
+.container .image .ripple {
+  position: absolute;
+  top: 350;
+  left: 10px;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 150px;
+  width: 300px;
+  animation: ripple 3s linear infinite 1s;
+}
+
+.container .image .ripple:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.container .image .ripple:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.container .image .ripple:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.container .image .ripple:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.container .image .ripple:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.container .image .ripple:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.container .image .ripple:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.container .image .yaya {
+  background-image: url("../static/image/기본형.svg");
+  background-size: cover;
+  background-color: transparent;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 420;
+  left: 0px;
+  right: 0;
+  bottom: 30%;
+  margin: auto;
+  animation: bounce 2s ease-in-out 3;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+    height: 35px;
+  }
+
+  50% {
+    transform: translateY(-150px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* loader starts */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loader-container h3 {
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.3rem;
+}
+
+.loader-container img {
+  width: 30%;
+  height: 20%;
+  border-radius: 50%;
+  margin-top: 5%;
+}
+
+.loader-container.fade-out {
+  top: -120%;
+  transition: 1s ease;
+}
+/* loader ends */

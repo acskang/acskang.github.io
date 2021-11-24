@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 10px;
+      background-color: lightgray;
+      border-radius: 10px;
+      padding: 10px;
+      position: absolute;
+      top: 5%;
+      left: 25%;
+      width: 650px;
+      box-shadow: 5px 0px 10px;
+    }
+
+    .container {
+      background-color: violet;
+      height: 300px;
+      width: 320px;
+      position: relative;
+    }
+
+    .main img {
+      height: 300px;
+      width: 320px;
+      transition: .5s;
+    }
+
+    h2 {
+      position: absolute;
+      top: 180px;
+      left: 125px;
+      text-transform: uppercase;
+      transition: .5s;
+    }
+
+    .img1 {
+      clip-path: circle(23% at 53% 42%);
+    }
+
+    .img1:hover {
+      clip-path: circle(100%);
+    }
+
+    .img1:hover~h2 {
+      transform: translateY(40px);
+      z-index: -1;
+    }
+
+    .img2 {
+      clip-path: ellipse(25% 60% at 52% 5%);
+    }
+
+    .img2:hover {
+      clip-path: ellipse(100% 100%);
+    }
+
+    .img2:hover~h2 {
+      transform: translateY(40px);
+      z-index: -1;
+    }
+
+    .img3 {
+      clip-path: inset(20% 25% 40% 30%);
+    }
+
+    .img3:hover {
+      clip-path: inset(10%);
+    }
+
+    .img3:hover~h2 {
+      transform: translateY(40px);
+      z-index: -1;
+    }
+
+    .img4 {
+      clip-path: polygon(100% 0%, 0% 50%, 100% 50%);
+    }
+
+    .img4:hover {
+      clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+    }
+
+    .img4:hover~h2 {
+      transform: translateY(40px);
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <img src="../static/image/cycle.jpg" alt="" class="img1">
+      <h2>circle</h2>
+    </div>
+    <div class="container">
+      <img src="../static/image/cycle.jpg" alt="" class="img2">
+      <h2>ellipse</h2>
+    </div>
+    <div class="container">
+      <img src="../static/image/cycle.jpg" alt="" class="img3">
+      <h2>inset</h2>
+    </div>
+    <div class="container">
+      <img src="../static/image/cycle.jpg" alt="" class="img4">
+      <h2>polygon</h2>
+    </div>
+  </div>
+</body>
+
+</html>

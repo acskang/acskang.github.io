@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+</head>
+
+<body>
+  <p id="gfg" style="color:green;"></p>
+  <div id="screen_info"></div>
+  <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script>
+    $.getJSON("https://api.ipify.org?format=json",
+      function (data) {
+        let display_text = data.ip.split('.');
+        $("#gfg").html(data.ip);
+      })
+
+    let nowAppCodeName = navigator.appCodeName;
+    let nowAppName = navigator.appName;
+    let nowAppVersion = navigator.appVersion;
+    let nowCookieEnabled = navigator.cookieEnabled;
+    let nowLanguage = navigator.language;
+    let nowOnLine = navigator.onLine;
+    let nowPlatform = navigator.platform;
+    let nowProduct = navigator.product;
+    let nowUserAgent = navigator.userAgent;
+
+    document.write("브라우저의 코드명[navigator.appCodeName] : " + nowAppCodeName, "<br>");
+    document.write("브라우저의 이름[navigator.appName] : " + nowAppName, "<br>");
+    document.write("브라우저의 버전[navigator.appVersion] : " + nowAppVersion, "<br>");
+    document.write("쿠키 사용 가능 여부[navigator.cookieEnabled] : " + nowCookieEnabled, "<br>");
+    document.write("브라우저에서 사용되는 언어[navigator.language] : " + nowLanguage, "<br>");
+    document.write("온라인인지 여부[navigator.onLine] : " + nowOnLine, "<br>");
+    document.write("플랫폼 정보[navigator.platform] : " + nowPlatform, "<br>");
+    document.write("브라우저 엔진 이름[navigator.product] : " + nowProduct, "<br>");
+    document.write("운영체제 정보[navigator.userAgent] : " + nowUserAgent, "<br>");
+
+    let os = navigator.userAgent.toLowerCase();
+    let sw = screen.width;
+    let sh = screen.height;
+    let info = document.getElementById("screen_info");
+
+    if (os.indexOf('windows') >= 0) {
+      info.innerHTML = "현재 윈도우를 사용하고 있으며 화면 크기는 " + sw + "x" + sh + "px입니다.";
+    } else if (os.indexOf('macintosh') >= 0) {
+      info.innerHTML = "현재 맥을 사용하고 있으며 화면 크기는 " + sw + "x" + sh + "px입니다.";
+    } else if (os.indexOf('iphone') >= 0) {
+      info.innerHTML = "현재 아이폰을 사용하고 있으며 화면 크기는 " + sw + "x" + sh + "px입니다.";
+    } else if (os.indexOf('android') >= 0) {
+      info.innerHTML = "현재 안드로이드 폰을 사용하고 있으며 화면 크기는 " + sw + "x" + sh + "px입니다.";
+    }
+
+    // location
+    document.write("location.hash: " + location.hash, "<br>");
+    document.write("location.host: " + location.host, "<br>");
+    document.write("location.hostname: " + location.hostname, "<br>");
+    document.write("location.href: " + location.href, "<br>");
+    document.write("location.origin: " + location.origin, "<br>");
+    document.write("location.pathname: " + location.pathname, "<br>");
+    document.write("location.port: " + location.port, "<br>");
+    document.write("location.protocol: " + location.protocol, "<br>");
+    document.write("location.search: " + location.search, "<br>");
+
+    // session
+    document.write("<br>");
+    document.write("** Session **", "<br>");
+    document.write("sessionStorage.length(): " + sessionStorage.length, "<br>");
+
+    // ip address location
+    // https://ipapi.medium.com/ip-address-location-javascript-examples-82dd5d6da9cb
+    document.write("<br>");
+    document.write("** ip address location **", "<br>");
+    // fetch('https://ipapi.co/json/')
+    //   .then(function (response) {
+    //     return response.json();
+    //   })
+    //   .then(function (data) {
+    //     console.log(data);
+    //   });
+
+    // $.get('https://ipapi.co/json/', function (data) {
+    //   document.write("ip address location: " + data, "<br>");
+    //   console.log(data);
+    // })
+
+    let city = document.createElement("h3");
+    let weather = document.createElement("div");
+    let openWeatherKey = '2eed4caf63cb258a5a91284af80296d4';
+    function mycallback(json) {
+      city.textContent = json.city;
+      // document.body.appendChild(city);
+      // console.log(json);
+      let myLatitude = json.latitude;
+      let myLongitude = json.longitude;
+      console.log(myLatitude, myLongitude);
+      $.get('http://api.openweathermap.org/data/2.5/weather?lat=' +
+        myLatitude + '&lon=' + myLongitude + '&appid=' + openWeatherKey,
+        function (wResponse) {
+          let myWeatherAll = JSON.stringify(wResponse);
+          weather.textContent = myWeatherAll;
+          document.body.appendChild(weather);
+          // document.body.innerHTML = myWeatherAll;
+          // console.log(wResponse);
+        })
+    }
+    $.ajax({
+      url: "https://ipapi.co/jsonp",
+      dataType: "jsonp",
+      jsonpCallback: "mycallback"
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- Ref. URL -->
+<!-- https://www.geeksforgeeks.org/how-to-get-client-ip-address-using-javascript/ -->
+<!-- https://goddaehee.tistory.com/240?category=241350 -->

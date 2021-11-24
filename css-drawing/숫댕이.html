@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: scroll;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function setup() {
+      createCanvas(window.innerWidth * 1.05, window.innerHeight * 1);
+      ellipseMode(CENTER);
+      noLoop();
+    }
+
+    function draw() {
+
+      function sprite() {
+        fill(0, 232);
+        ellipse(400, 400, 100, 100);
+
+        push();
+        //first eye
+        fill('white');
+        rotate(PI / 10);
+        ellipse(485, 260, 22, 28);
+        pop();
+
+        push();
+        fill('black');
+        ellipse(385, 400, 8, 8);
+        pop();
+
+        push();
+        //second eye
+        fill('white');
+        rotate(-PI / 10);
+        ellipse(270, 506, 22, 28);
+        pop();
+
+        push();
+        fill('black');
+        ellipse(415, 400, 8, 8);
+        pop();
+
+        translate(400, 400);
+        for (let i = 0; i < 100; i++) {
+          let x = random(24, 26);
+          let y = random(30, 38);
+          let z = random(30, 38);
+          let a = random(40, 48);
+          line(x, y, z, a);
+          strokeWeight(2);
+          rotate(PI / 50);
+        }
+        //leg
+        push();
+        noFill();
+        beginShape();
+        vertex(-20, 40);
+        bezierVertex(-45, 30, -45, 80, -20, 100);
+        endShape();
+        pop();
+
+        //otherleg
+        push();
+        noFill();
+        beginShape();
+        vertex(20, 40);
+        bezierVertex(45, 30, 45, 80, 20, 100);
+        endShape();
+        pop();
+      }
+
+      function arms() {
+        //arm
+        push();
+        noFill();
+        beginShape();
+        rotate(-180);
+        vertex(20, 40);
+        bezierVertex(45, 30, 45, 70, 16, 80);
+        endShape();
+        pop();
+
+        //otherarm
+        push();
+        noFill();
+        beginShape();
+        vertex(40, 20);
+        bezierVertex(45, 30, 45, 80, 60, 30);
+        endShape();
+        pop();
+      }
+
+      push();
+      noStroke();
+      star(350, 384, 10, 16, 6);
+      pop();
+
+      push();
+      noStroke();
+      star(486, 446, 10, 16, 6);
+      pop();
+
+      push();
+      noStroke();
+      for (let stars = 0; stars < 70; stars++) {
+        var changeX = random(-10, 1500);
+        var changeY = random(-10, 1500);
+        star(changeX, changeY, 10, 16, 6);
+      }
+      pop();
+
+      push();
+      noStroke();
+      star(335, 236, 10, 16, 6);
+      pop();
+
+      push();
+      noStroke();
+      star(360, 745, 10, 16, 6);
+      pop();
+
+
+      function star(x, y, radius1, radius2, npoints) {
+        var r = random(10, 255);
+        var g = random(10, 255);
+        var b = random(10, 255);
+        fill(r, g, b);
+        let angle = TWO_PI / npoints;
+        let halfAngle = angle / 2.0;
+        beginShape();
+        for (let a = 0; a < TWO_PI; a += angle) {
+          let sx = x + cos(a) * radius2;
+          let sy = y + sin(a) * radius2;
+          vertex(sx, sy);
+          sx = x + cos(a + halfAngle) * radius1;
+          sy = y + sin(a + halfAngle) * radius1;
+          vertex(sx, sy);
+        }
+        endShape(CLOSE);
+      }
+
+      push();
+      translate(20, 30);
+      sprite();
+      arms();
+      pop();
+
+      push();
+      translate(300, 100);
+      rotate(120);
+      sprite();
+
+      //arm
+      push();
+      noFill();
+      beginShape();
+      vertex(-50, 10);
+      bezierVertex(-65, 10, -68, 0, -100, 55);
+      endShape();
+      pop();
+
+      //otherarm
+      push();
+      noFill();
+      beginShape();
+      vertex(40, 20);
+      bezierVertex(45, 30, 45, 80, 100, 30);
+      endShape();
+      pop();
+      pop();
+
+      push();
+      translate(-140, -120);
+      sprite();
+      scale(-1, 1);
+      arms();
+      pop();
+
+      push();
+      translate(400, 160);
+      sprite();
+      push();
+      noFill();
+      beginShape();
+      vertex(-50, 10);
+      bezierVertex(-100, 25, -100, 30, -10, 30);
+      endShape();
+      pop();
+
+      //otherarm
+      push();
+      noFill();
+      beginShape();
+      vertex(40, 20);
+      bezierVertex(45, 30, 45, 80, 100, 30);
+      endShape();
+      pop();
+
+      push();
+      noStroke();
+      star(0, 25, 10, 16, 6);
+      pop();
+      pop();
+
+      push();
+      translate(1500, 150);
+      scale(-1, 1);
+      sprite();
+      push();
+      noFill();
+      beginShape();
+      vertex(-50, 10);
+      bezierVertex(-100, 25, -100, 30, -10, 30);
+      endShape();
+      pop();
+
+      //otherarm
+      push();
+      noFill();
+      beginShape();
+      vertex(40, 20);
+      bezierVertex(45, 30, 45, 80, 80, 0);
+      endShape();
+      pop();
+
+      push();
+      noStroke();
+      star(0, 25, 10, 16, 6);
+      star(80, 5, 10, 16, 6);
+      pop();
+
+      pop();
+
+      push();
+      translate(460, 60);
+      rotate(-PI / 10);
+      sprite();
+      scale(1, -1);
+      push();
+      rotate(PI);
+      arms();
+      pop();
+      push();
+      noStroke();
+      star(68, 25, 10, 16, 6);
+      star(-55, -34, 10, 16, 6);
+      pop();
+      pop();
+
+      push();
+      translate(240, -200);
+      sprite();
+      scale(1, -1);
+      arms();
+      push();
+      noStroke();
+      star(68, 25, 10, 16, 6);
+      star(-60, -15, 10, 16, 6);
+      star(-60, -34, 10, 16, 6);
+      pop();
+
+      pop();
+      push();
+      translate(380, -80);
+      sprite();
+      arms();
+      push();
+      noStroke();
+      star(68, 25, 10, 16, 6);
+      star(-60, -15, 10, 16, 6);
+      star(-60, -34, 10, 16, 6);
+      pop();
+      pop();
+
+
+      push();
+      translate(640, 320);
+      sprite();
+      scale(-1, 1);
+      arms();
+      push();
+      noStroke();
+      star(68, 25, 10, 16, 6);
+      star(-70, -35, 10, 16, 6);
+      pop();
+      pop();
+
+      push();
+      translate(1480, -260);
+      scale(-1, 1);
+      sprite();
+      push();
+      noFill();
+      beginShape();
+      vertex(-50, 10);
+      bezierVertex(-100, 25, -100, 30, -10, 30);
+      endShape();
+      pop();
+
+      //otherarm
+      push();
+      noFill();
+      beginShape();
+      vertex(40, 20);
+      bezierVertex(45, 30, 45, 80, 80, 0);
+      endShape();
+      pop();
+
+      push();
+      noStroke();
+      star(0, 25, 10, 16, 6);
+      star(80, 5, 10, 16, 6);
+      pop();
+
+      pop();
+
+      push();
+      translate(800, 400);
+      rotate(-120);
+      //scale(1, -1);
+      sprite();
+      push();
+      noStroke();
+      star(-105, 65, 10, 16, 6);
+      star(90, 28, 10, 16, 6);
+      star(76, 35, 10, 16, 6);
+      star(64, 38, 10, 16, 6);
+      pop();
+      //arm
+      push();
+      noFill();
+      beginShape();
+      vertex(-50, 10);
+      bezierVertex(-65, 10, -68, 0, -100, 55);
+      endShape();
+      pop();
+
+      //otherarm
+      push();
+      noFill();
+      beginShape();
+      vertex(40, 20);
+      bezierVertex(45, 30, 45, 80, 100, 30);
+      endShape();
+      pop();
+      pop();
+
+    }
+  </script>
+</body>
+
+</html>

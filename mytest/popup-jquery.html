@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: yellow;
+    }
+
+    .main {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      height: 400px;
+      width: 400px;
+      padding: 10px;
+      border: 2px solid violet;
+      background-color: white;
+    }
+
+    .pop {
+      position: absolute;
+      top: 17%;
+      left: 15%;
+      height: 330px;
+      width: 330px;
+      padding: 10px;
+      background-color: lightskyblue;
+      transform: scale(0, 0);
+      transition: 0.5s;
+    }
+
+    h2 {
+      text-align: conter;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    #btn1 {
+      position: absolute;
+      bottom: 20px;
+      height: 30px;
+      width: 70px;
+      background-color: black;
+      color: white;
+      outline: none;
+      border: sokid violet 1px;
+    }
+
+    #btn2 {
+      height: 30px;
+      width: 50px;
+      background-color: black;
+      color: white;
+      outline: none;
+      border: sokid violet 1px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<body>
+  <div class="main">
+    <h2>this is a heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio consequuntur alias iusto esse eius repudiandae
+      fugit natus illo quia earum? Blanditiis nulla quo non perferendis at, recusandae rem velit? Beatae laudantium at,
+      autem aperiam nisi, voluptates fugiat ipsum, minima a mollitia quia nostrum aliquam nemo molestias qui. Distinctio
+      provident facere corrupti quisquam quasi, repellendus magni, excepturi minus nulla quibusdam ducimus amet
+      doloribus, vero soluta. Mollitia officia natus harum nemo quae aperiam ducimus aliquam repellendus! Alias ipsam
+      autem sit amet praesentium.
+    </p>
+    <button id="btn1">more</button>
+  </div>
+  <div class="pop">
+    <h2>this is a popup</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fugiat iure officiis tenetur impedit laboriosam
+      esse maiores dolores itaque assumenda? Atque laboriosam ea hic eos perspiciatis, dolores aliquam facilis quaerat
+      nesciunt inventore itaque similique, deserunt, neque dignissimos cupiditate natus. Reiciendis deleniti animi odit
+      quos ab nesciunt quod dolorum id voluptates.</p>
+    <button id="btn2">ok</button>
+  </div>
+  <script defer>
+    // $(document).ready(function () {
+    $('#btn1').on({
+      "click": function () {
+        $('.pop').css({
+          "transform": "scale(1, 1)"
+        });
+        $('.main').css({
+          "filter": "blur(20px)"
+        });
+      }
+    });
+    $('#btn2').on({
+      "click": function () {
+        $('.pop').css({
+          "transform": "scale(0, 0)"
+        });
+        $('.main').css({
+          "filter": "blur(0px)"
+        });
+      }
+    });
+    // })
+  </script>
+</body>
+
+</html>

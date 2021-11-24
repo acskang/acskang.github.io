@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .canvas {
+      background-color: beige;
+    }
+
+    .color-btn {
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 50%;
+    }
+
+    .color-btn[data-color='black'] {
+      background: black;
+    }
+
+    .color-btn[data-color='red'] {
+      background: red;
+    }
+
+    .color-btn[data-color='green'] {
+      background: green;
+    }
+
+    .color-btn[data-color='blue'] {
+      background: blue;
+    }
+
+    .image-btn {
+      width: 40px;
+      height: 40px;
+      background: url(../../image/cycle.jpg) no-repeat 50% 50% / cover;
+    }
+
+    .result-image {}
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Draw Image</h1>
+  <canvas class="canvas" width="600" height="400">This browser not allowed for canvas.</canvas>
+  <div class="control">
+    <button class="color-btn" data-type="color" data-color="black"></button>
+    <button class="color-btn" data-type="color" data-color="red"></button>
+    <button class="color-btn" data-type="color" data-color="green"></button>
+    <button class="color-btn" data-type="color" data-color="blue"></button>
+    <button class="image-btn" data-type="image"></button>
+  </div>
+  <button class="save-btn">이미지 저장</button>
+  <div class="result-image"></div>
+  <script>
+    const c = document.querySelector('.canvas');
+    const ctx = c.getContext('2d');
+    const control = document.querySelector('.control');
+    const saveBtn = document.querySelector('.save-btn');
+    const resultImage = document.querySelector('.result-image');
+    let drawingMode;
+    let brush = 'color';
+    let colorVal = 'black';
+
+    const imgElem = new Image();
+    imgElem.src = '../../image/cycle.jpg';
+
+    function downHandler() {
+      drawingMode = true;
+    }
+    function upHandler() {
+      drawingMode = false;
+    }
+    function moveHandler(e) {
+      if (!drawingMode) return;
+
+      switch (brush) {
+        case 'color':
+          ctx.beginPath();
+          ctx.arc(e.layerX, e.layerY, 5, 0, Math.PI * 2, false);
+          ctx.fill();
+          break;
+        case 'image':
+          ctx.beginPath();
+          ctx.drawImage(imgElem, e.layerX, e.layerY, 50, 50);
+          break;
+      }
+    };
+
+    function setColor(e) {
+      brush = e.target.getAttribute('data-type');
+      colorVal = e.target.getAttribute('data-color');
+      ctx.fillStyle = colorVal;
+    }
+
+    function createImage() {
+      const url = c.toDataURL('image/png');
+      const imgElem = new Image();
+      imgElem.src = url;
+      resultImage.appendChild(imgElem);
+    }
+    c.addEventListener('mousedown', downHandler);
+    c.addEventListener('mousemove', moveHandler);
+    c.addEventListener('mouseup', upHandler);
+    control.addEventListener('click', setColor);
+    saveBtn.addEventListener('click', createImage);
+  </script>
+</body>
+
+</html>

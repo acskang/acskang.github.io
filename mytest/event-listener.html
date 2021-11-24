@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>끝말잇기 게임</h1>
+  </div>
+  <div>
+    <span>시작 단어: </span>
+    <span id="word">한글</span>
+  </div>
+  <form action="" id="form">
+    <input type="text" id="input" />
+    <button id="btn" type="submit">입력</button>
+  </form>
+  <div id="result"></div>
+
+  <script defer>
+    let form = document.querySelector('#form');
+
+    form.addEventListener('submit', (e) => {
+      let word = document.querySelector('#word').textContent;
+      let input = document.querySelector('#input').value;
+      let lastLetter = word.substr(-1);
+      let firstLetter = input[0];
+      let err = '글자를 입력하세요!';
+
+      if (input) {
+        if (lastLetter === firstLetter) {
+          document.querySelector('#word').textContent = input;
+          document.querySelector('#result').textContent = '정답!';
+          document.querySelector('#input').reset();
+        }
+        else {
+          document.querySelector('#result').textContent = '땡!';
+        }
+      }
+      else {
+        alert(err);
+      }
+      e.preventDefault();
+    });
+  </script>
+</body>
+
+</html>

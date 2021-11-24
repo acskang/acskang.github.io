@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>Typewriter</h1>
+
+  <button onclick="typeWriter()">Click me</button>
+
+  <p id="demo"></p>
+
+  <script>
+    var i = 0;
+    var txt = "HttpRequest 객체에서 GET과 POST 속성은 django.http.QueryDict의 인스턴스이다. QueryDict은 사전형 타입의 클래스로 같은 키에 대해 복수의 값을 갖도록 커스터마이즈 할 수 있다. 이것은 HTML의 form 요소에서는 예를 들어 <select multiple='multiple'>과 같이 같은 키에 대해서 복수의 값을 전달해야할 필요가 있기 때문이다.";
+    var speed = 30;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

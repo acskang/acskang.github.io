@@ -1,0 +1,67 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: grey;
+}
+div#gallery{
+    background-color: gray;
+    font-size: 0;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+
+}
+div#gallery figure{
+    margin: 0;
+    width: 50%;
+    height: auto;
+    transition: 1s;
+    align-items: center;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+div#gallery figure:hover{
+    cursor: pointer;
+    z-index: 4;
+}
+div#gallery figure img{
+    width: 100%;
+    height: auto;
+}
+div#gallery figure:nth-child(1){
+    transform-origin: top left;
+}
+div#gallery figure:nth-child(2){
+    transform-origin: top right;
+}
+div#gallery figure:nth-child(3){
+    transform-origin: bottom left;
+}
+div#gallery figure:nth-child(4){
+    transform-origin: bottom right;
+}
+div#gallery figure figcaption{
+    margin: 0;
+    opacity: 0;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    padding: .3em;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: 1s 1s opacity;
+    text-align: center;
+}
+.expanded{
+    transform: scale(2);
+    z-index: 5;
+
+}
+div#gallery figure.expanded figcaption{
+    opacity: 1;
+}
+div.full figure:not(.expanded){
+    pointer-events: none;
+}

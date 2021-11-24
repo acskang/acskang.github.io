@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+
+:root {
+  --main-color: #3867d6;
+}
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+span {
+  color: var(--main-color);
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  background-color: #222;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  background-color: #333;
+  flex-basis: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conversation {
+  flex-basis: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.footer {
+  background-color: #333;
+  padding: 1rem 9%;
+  flex-basis: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .logo {
+  padding: 1rem 9%;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.footer .credit {
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 9%;
+}
+
+.yaya-speak {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0rem 2rem;
+}
+.yaya .speak h3 {
+  margin-top: 10px;
+}
+.img-wrapper {
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.human {
+  margin: 0rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.human .input-text {
+  width: 95%;
+}
+.human .submit-btn {
+  border: none;
+  background-color: transparent;
+}
+.human .fab {
+  font-size: x-large;
+  color: white;
+}
+
+.img-wrapper .ripple {
+  position: absolute;
+  display: none;
+  top: 350;
+  left: 10px;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 150px;
+  width: 300px;
+  animation: ripple 3s linear infinite 1s;
+}
+
+.img-wrapper .ripple:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.img-wrapper .ripple:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.img-wrapper .ripple:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.img-wrapper .ripple:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.img-wrapper .ripple:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.img-wrapper .ripple:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.img-wrapper .ripple:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.img-wrapper .yaya-img {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.theme-toggler {
+  position: fixed;
+  top: 0rem;
+  right: -20rem;
+  background-color: #333;
+  z-index: 1000;
+  width: 20rem;
+  text-align: center;
+}
+.theme-toggler.active {
+  right: 0;
+}
+.theme-toggler h3 {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+.theme-toggler .buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.theme-toggler .buttons .theme-btn {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.theme-toggler .toggle-btn {
+  position: absolute;
+  top: 0;
+  left: -5.9rem;
+  padding: 1.3rem 1.5rem;
+  background-color: #333;
+  cursor: pointer;
+}
+.theme-toggler .toggle-btn i {
+  color: #fff;
+  font-size: 3rem;
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+}

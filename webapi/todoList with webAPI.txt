@@ -1,0 +1,22 @@
+https://www.youtube.com/watch?v=Vatd-V0pLXo
+
+1. 블루투스
+2. push api
+3. contact picker api: 연락처에 접근
+4. shape detection api 
+5. webxr api <- webvr api
+6. gamepad api
+7. vibration api: 그냥 진동
+8. clipboard api
+9. web usb api
+10. file system access api
+
+https://www.youtube.com/watch?v=lkTpOHv1Ros
+최신 css 기능
+1. 새로운 css 기능의 지원 여부
+  @supports
+2. scroll snap type 
+3. psuedo selector: ":is()"
+4. flex gap property 
+5. aspect ratio 
+6. position: sticky

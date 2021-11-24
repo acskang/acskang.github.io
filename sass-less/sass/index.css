@@ -1,0 +1,52 @@
+body {
+  color: #444444;
+  font-size: 12px;
+  background-image: url("https://www.thesysm.com/src/img/cycle.jpg");
+}
+
+h1 a {
+  color: #222222;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a {
+  color: #666666;
+}
+
+nav h1,
+#wrap > section > h1 {
+  border-left: 5px solid red;
+  padding-left: 10px;
+}
+
+#content > h1 {
+  background-color: silver;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+aside h1 {
+  background-color: silver;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+header {
+  color: black;
+}
+header nav {
+  font-size: 12px;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: blue;
+}
+
+/*# sourceMappingURL=index.css.map */

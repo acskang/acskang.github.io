@@ -1,0 +1,76 @@
+.search {
+  margin: 20px;
+  position: relative;
+}
+.search form {
+  display: flex;
+}
+.search form:hover .search-icon {
+  opacity: 1;
+}
+
+.search .search-field {
+  width: 100%;
+  flex-shrink: 0;
+}
+.search .search-field:focus {
+  flex-shrink: initial;
+}
+.search .search-field:focus ~ .cancel-btn {
+  opacity: 1;
+}
+.search .cancel-btn {
+  flex-shrink: 0;
+  margin-left: 20px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.search .search-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  opacity: 0.3;
+}
+.text-area {
+  margin: 20px;
+  margin-top: 124px;
+  margin-bottom: 12px;
+}
+.text-area .desc {
+  margin-top: 12px;
+}
+.list {
+  font-size: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 148px;
+  grid-column-gap: 17px;
+  grid-row-gap: 18px;
+  padding: 20px;
+}
+
+.list .item {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.list .item:nth-child(1) {
+  background-image: url("img/likes-1.jpg");
+}
+.list .item:nth-child(2) {
+  background-image: url("img/likes-2.jpg");
+}
+.list .item:nth-child(3) {
+  background-image: url("img/likes-3.jpg");
+}
+.list .item:nth-child(4) {
+  background-image: url("img/likes-4.jpg");
+}
+.list .item:nth-child(5) {
+  background-image: url("img/likes-1.jpg");
+}
+.list .item:nth-child(6) {
+  background-image: url("img/likes-2.jpg");
+}

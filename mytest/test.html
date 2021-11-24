@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../mr.webdesigner/biz-card/biz-card-section.css" />
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, auto));
+      grid-auto-rows: minmax(50px, auto);
+      gap: .5rem;
+      margin: 10% 1%;
+      row-gap: 2rem;
+    }
+
+    .gr:nth-child(1) {
+      grid-column: 1/4;
+    }
+
+    /* .gr:nth-child(n+2):nth-child(-n+5) {
+      text-align: center;
+    } */
+    .gr:nth-child(even) {
+      text-align: left;
+    }
+
+    .gr:nth-child(odd) {
+      text-align: right;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .container .title {
+      text-transform: capitalize;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="gr 1">
+      <div class="title" style="text-align: center; font-size: 3rem;">who am i</div>
+      <div data-include-path="../mr.webdesigner/biz-card/biz-card-section.html"></div>
+    </div>
+    <div class="gr 2">
+      <div class="title" style="text-align: center; font-size: 2rem;">coffee shop</div>
+      <img src="../static/image/coffee-shop-black.jpeg" />
+    </div>
+    <div class="gr 3">
+      <div class="title" style="text-align: center; font-size: 2rem;">coffee shop</div>
+      <img src="../static/image/coffee-shop-white.jpg" />
+    </div>
+    <div class="gr 4">
+      <div class="title" style="text-align: center; font-size: 2rem;">event org</div>
+      <img src="../static/image/event-organizer.jpg" />
+    </div>
+    <div class="gr 5">
+      <div class="title" style="text-align: center; font-size: 2rem;">restaurant</div>
+      <img src="../static/image/restaurant-hamburg.png" />
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', function () {
+      let allElements = document.getElementsByTagName('*');
+      Array.prototype.forEach.call(allElements, function (el) {
+        let includePath = el.dataset.includePath;
+        if (includePath) {
+          let xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              el.outerHTML = this.responseText;
+            }
+          };
+          xhttp.open('GET', includePath, true);
+          xhttp.send();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
